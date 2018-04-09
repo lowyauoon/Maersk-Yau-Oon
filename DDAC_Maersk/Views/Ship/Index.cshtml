@@ -1,0 +1,43 @@
+﻿@model IEnumerable<DDAC_Maersk.Models.Ship>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Details","Ship")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipContainerNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ShipName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipContainerNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ShipId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ShipId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ShipId })
+        </td>*@
+
+        <td>@item.ShipName</td>
+        <td>@item.ShipContainerNumber</td>
+
+    </tr>
+}
+
+</table>

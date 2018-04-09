@@ -1,0 +1,73 @@
+﻿@model DDAC_Maersk.ViewModel.SSCViewModel
+@{
+    ViewBag.Title = "SelectShip";
+}
+
+<h2>SelectShip</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Schedule ID
+        </th>
+        <th>
+            Schedule Origin
+        </th>
+        <th>
+            Schedule Destination
+        </th>
+        <th>
+            Schedule Departure Time
+        </th>
+        <th>
+            Schedule Arrival Time
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Model.Schedule.ScheduleID
+        </td>
+        <td>
+            @Model.Schedule.Origin
+        </td>
+        <td>
+            @Model.Schedule.Destination
+        </td>
+        <td>
+            @Model.Schedule.DepatureTime
+        </td>
+        <td>
+            @Model.Schedule.ArrivalTime
+        </td>
+    </tr>
+</table>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Ship Name
+        </th>
+        <th>
+            Ship ContainerSpace
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Ships)
+    {
+        <tr>
+            <td>
+                @item.ShipName
+            </td>
+            <td>
+                @item.ShipContainerNumber
+            </td>
+            <td>
+
+                @Html.ActionLink("Select", "SelectCustomer", "Order", new { Shipid = item.ShipId, Scheduleid = @Model.Schedule.ScheduleID }, new { @class = "btn btn-success btn-xs" })
+            </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,124 @@
+﻿@*@model Maersk.ViewModels.ScheduleShipCustomerViewModel*@
+
+@{
+    ViewBag.Title = "ViewBooking";
+}
+
+<h2>ViewBooking</h2>
+
+<p>
+    @Html.ActionLink("Create New Order", "SelectSchedule", "Order", new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Order ID
+        </th>
+        <th>
+            Order Agent
+        </th>
+        <th>
+            Customer ID
+        </th>
+        <th>
+            Customer Name
+        </th>
+        <th>
+            Customer Email
+        </th>
+        <th>
+            Customer Contact Number
+        </th>
+        <th>
+            Ship ID
+        </th>
+        <th>
+            Ship Name
+        </th>
+        <th>
+            Ship Container Space
+        </th>
+        <th>
+            Container ID
+        </th>
+        <th>
+            Type of Container
+        </th>
+        <th>
+            Weight of Container
+        </th>
+        <th>
+            Schedule ID
+        </th>
+        <th>
+            Schedule Origin
+        </th>
+        <th>
+            Schedule Destination
+        </th>
+        <th>
+            Schedule Departure Date Time
+        </th>
+        <th>
+            Schedule Arrival Date Time
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.OrderID
+            </td>
+            <td>
+                @item.Order.OrderAgent
+            </td>
+            <td>
+                @item.Order.CustomerID
+            </td>
+            <td>
+                @item.Order.Customer.Name
+            </td>
+            <td>
+                @item.Order.Customer.Email
+            </td>
+            <td>
+                @item.Order.Customer.ContactNumber
+            </td>
+            <td>
+                @item.Order.ShipId
+            </td>
+            <td>
+                @item.Order.Ship.ShipName
+            </td>
+            <td>
+                @item.Order.Ship.ShipContainerNumber
+            </td>
+            <td>
+                @item.ContainerID
+            </td>
+            <td>
+                @item.TypeOfContainer
+            </td>
+            <td>
+                @item.WeightofContainer
+            </td>
+            <td>
+                @item.Order.ScheduleID
+            </td>
+            <td>
+                @item.Order.Schedule.Origin
+            </td>
+            <td>
+                @item.Order.Schedule.Destination
+            </td>
+            <td>
+                @item.Order.Schedule.DepatureTime
+            </td>
+            <td>
+                @item.Order.Schedule.ArrivalTime
+            </td>
+        </tr>
+    }
+
+</table>

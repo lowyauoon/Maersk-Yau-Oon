@@ -1,0 +1,28 @@
+﻿@model DDAC_Maersk.Models.Ship
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+
+@using (Html.BeginForm("Create", "Ship"))
+{
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+    @Html.LabelFor(m => m.ShipName)
+    @Html.TextBoxFor(m => m.ShipName)
+
+    @Html.LabelFor(m => m.ShipContainerNumber)
+    @Html.TextBoxFor(m => m.ShipContainerNumber)
+
+    <button type="submit">Submit</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
